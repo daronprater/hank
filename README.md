@@ -45,3 +45,9 @@ print(h.fetch("frisbee"))          # "Hank fetches the frisbee and brings it bac
 
 h.give_hank_treat("bacon", 2)      # Adds to treat log
 print(h.get_treat_log())           # View treat log as a pandas DataFrame
+```
+
+## Dependencies
+- `pandas`
+- `numpy`
+- `pytest`

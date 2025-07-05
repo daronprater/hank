@@ -10,7 +10,8 @@ dependencies = [
     "numpy>=1.24",
     "pandas>=2.0",
     "pytest",
-    "pre-commit"
+    "pre-commit",
+    "bump2version"
 ]
 
 [build-system]
