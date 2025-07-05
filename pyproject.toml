@@ -1,6 +1,6 @@
 [project]
 name = "hank"
-version = "0.1.2"
+version = "0.1.3"
 description = "A fun little package inspired by a very good dog named Hank."
 authors = [{ name = "Daron Prater", email = "praterdaron513@gmail.com" }]
 readme = "README.md"
