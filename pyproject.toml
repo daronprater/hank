@@ -6,16 +6,23 @@ authors = [{ name = "Daron Prater", email = "praterdaron513@gmail.com" }]
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.8"
+
 dependencies = [
     "numpy>=1.24",
-    "pandas>=2.0",
-    "pytest",
-    "pre-commit",
-    "bump2version"
+    "pandas>=2.0"
 ]
 
 [project.optional-dependencies]
-dev = ["build", "twine"]
+dev = [
+    "pytest",
+    "pre-commit",
+    "bump2version",
+    "build",
+    "twine",
+    "black",
+    "flake8",
+    "mypy"
+]
 
 [build-system]
 requires = ["setuptools>=61.0"]
