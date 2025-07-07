@@ -21,7 +21,8 @@ dev = [
     "twine",
     "black",
     "flake8",
-    "mypy"
+    "mypy",
+    "pandas-stubs"
 ]
 
 [build-system]
