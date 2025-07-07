@@ -1,12 +1,13 @@
-name: Publish to TestPyPI
+# .github/workflows/publish.yml
+name: Publish to PyPI
 
 on:
   push:
-    branches: [dev]
+    branches: [main]
 
 jobs:
-  test_publish:
-    name: Build and publish to TestPyPI
+  publish:
+    name: Build and publish to PyPI
     runs-on: ubuntu-latest
 
     steps:
@@ -19,13 +20,13 @@ jobs:
 
       - name: Install build tools
         run: |
-          python -m pip install --upgrade build twine
+          pip install --upgrade build twine
 
       - name: Build the package
         run: python -m build
 
-      - name: Upload to TestPyPI
+      - name: Publish to PyPI
         env:
           TWINE_USERNAME: __token__
-          TWINE_PASSWORD: ${{ secrets.TEST_PYPI_API_TOKEN }}
-        run: twine upload --verbose --repository-url https://test.pypi.org/legacy/ dist/*
+          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+        run: twine upload dist/*
