@@ -1,6 +1,6 @@
 """Hank package initialization and exports."""
 
-__version__ = "0.1.5"
+__version__ = "0.1.6"
 
 from .dog import Hank  # noqa: F401
 
