@@ -16,25 +16,31 @@
 
 ## 🔧 Installation
 
+From Pypi:
+```bash
+pip install hank
+```
+
+From Source:
 ```bash
 git clone https://github.com/yourusername/hank.git
 cd hank
 python -m venv .venv
 source .venv/bin/activate  # or .venv\Scripts\activate on Windows
-pip install -e .
+pip install -e[dev].
 ```
 
 ---
 
 ## Running Tests
 
-```
+```bash
 pytest
 ```
 
 ## Example Usage
 
-```
+```python
 from hank import Hank
 
 h = Hank(name="Hank", favorite_toy="stick")
@@ -46,6 +52,33 @@ print(h.fetch("frisbee"))          # "Hank fetches the frisbee and brings it bac
 h.give_hank_treat("bacon", 2)      # Adds to treat log
 print(h.get_treat_log())           # View treat log as a pandas DataFrame
 ```
+## Contributing
+Contributions are welcome! Here’s how to get started:
+
+1. Fork the Repo
+2. Set up a virtual environment and install dependencies:
+```bash
+pip install -e .[dev]
+pre-commit install
+```
+3. Create a new branch off of Dev
+```bash
+git checkout dev
+git pull origin dev
+git checkout -b feature/my-feature
+```
+
+4. Make changes and run tests and linters
+```bash
+black . && flake8 . && mypy . && pytest
+```
+
+5. Commit and push your changes
+```bash
+git push origin feature/my-feature
+```
+
+6. Open a PR to merge into Dev
 
 ## Dependencies
 - `pandas`
