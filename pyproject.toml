@@ -22,8 +22,7 @@ dev = [
     "black",
     "flake8",
     "mypy",
-    "pandas-stubs",
-    "python-semantic-release"
+    "pandas-stubs"
 ]
 
 [build-system]
@@ -32,13 +31,3 @@ build-backend = "setuptools.build_meta"
 
 [tool.black]
 line-length = 100
-
-[tool.semantic_release]
-version_variable = [
-  "hank/__init__.py:__version__"
-]
-upload_to_pypi = true
-build_command = "python -m build"
-branch = "main"
-changelog_file = "CHANGELOG.md"
-commit_parser = "angular"  # Conventional commits style
