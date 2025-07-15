@@ -1,4 +1,4 @@
-name: Release
+name: Semantic Release Dry Run
 
 on:
   push:
@@ -6,19 +6,18 @@ on:
       - chore/setup-semantic-release
 
 jobs:
-  release:
-    name: Python Semantic Release
+  semantic-release-dry-run:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # required for changelog and versioning
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install dependencies
         run: |
@@ -26,9 +25,6 @@ jobs:
           pip install build
           pip install python-semantic-release
 
-      - name: Run Semantic Release (Dry Run)
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+      - name: Run Semantic Release (Dry Mode)
         run: |
-          semantic-release publish --dry-run --debug
+          semantic-release version --skip-build --skip-commit --skip-tag --skip-push --debug
