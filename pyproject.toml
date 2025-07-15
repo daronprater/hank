@@ -38,10 +38,6 @@ upload_to_pypi = true
 build_command = "python -m build"
 commit_parser = "conventional"
 
-
-[[tool.semantic_release.branches]]
-name = "main"
-
-[[tool.semantic_release.branches]]
-name = "chore/setup-semantic-release"
-type = "release" # Temporarily treat this as a release branch
+[tool.semantic_release.branches.main]
+match = "main"
+prerelease = false

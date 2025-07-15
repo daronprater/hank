@@ -27,4 +27,4 @@ jobs:
 
       - name: Run Semantic Release (Dry Mode)
         run: |
-          semantic-release version --skip-build --skip-commit --skip-tag --skip-push --debug
+          semantic-release -v --noop version
