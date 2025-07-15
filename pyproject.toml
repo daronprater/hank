@@ -34,9 +34,14 @@ line-length = 100
 
 [tool.semantic_release]
 version_variable = "hank/__init__.py:__version__"
-branch = "main"
 upload_to_pypi = true
 build_command = "python -m build"
+commit_parser = "conventional"
 
-[tool.semantic_release.commit_parser]
-parser = "angular"
+
+[[tool.semantic_release.branches]]
+name = "main"
+
+[[tool.semantic_release.branches]]
+name = "chore/setup-semantic-release"
+type = "release" # Temporarily treat this as a release branch
