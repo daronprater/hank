@@ -3,7 +3,7 @@ name: Semantic Release Dry Run
 on:
   push:
     branches:
-      - chore/setup-semantic-release
+      - main
 
 jobs:
   semantic-release-dry-run:
@@ -27,4 +27,4 @@ jobs:
 
       - name: Run Semantic Release (Dry Mode)
         run: |
-          semantic-release -v --noop version
+          semantic-release -v version
